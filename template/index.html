@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+<style>
+body {
+  background-color: lightblue;
+}
+
+.city_select {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding-left: 120px;
+  background-color:#e6d88e;
+  font-weight: bold;
+
+}
+</style>
+
+</head>
+<body style="background-color:#e6d88e;">
+{% include 'navbar.html' %}    
+
+<div class="container-fluid" style="margin-top: 5%;">
+    <h2 style="color:blue;text-align:center;"class="mt-5">AQI CALCULATOR</h2>
+
+    <p>Examining air quality has become one of the most essential activities for the peoples in many industrial and urban areas
+    today. The quality of air is adversely affected due to various forms of pollution caused by electricity, transportation, fuel uses etc.
+    The deposition of harmful gases is creating a serious problem for the quality of life in smart cities. With this increasing air pollution,
+    we need to implement efficient air quality monitoring and prediction models which collect information about the concentration of
+    air pollutants and provide assessment of air pollution in area. Particulate matter contains microscopic solids or liquid droplets that
+    are so small that they can be inhaled and cause serious health problems. Of these, particles less than 2.5 micrometres in diameter,
+    also known as fine particles or PM2.5, pose the greatest risk to health. Hence, air quality evaluation and prediction has become an
+    important research area.</p>
+    
+  
+    <div style="background-color:#e6d88e;"class="text-center">
+        <img src="{% static 'AQI_SCALE.png' %}" class="img-fluid" alt="AQI Scale" width=500'' height=``200''>
+    </div>
+    <div class="city_select">
+    <div  class="row mt-3">
+        <form action="city_aqi" method="post" >
+        <div  class="col-md-6">
+            <label style="padding-left:30px" for="city" class="form-label">Select City:</label>
+            {% csrf_token %}
+            <select name="city" id="city" class="form-select">
+                <option value="THRISSUR">THRISSUR</option>
+                <option value="PLAMOOD">PLAMOOD</option>
+                <option value="KARYAVATTOM">KARYAVATTOM</option>
+            </select>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <input type="submit" value="CONTINUE" class="btn btn-primary m-5">
+        </div>
+    </form>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>

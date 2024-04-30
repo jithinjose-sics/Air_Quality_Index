@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<br>
+<br>
+<img src="{% static 'aqi_karyavattom.png' %}">
+<img src="{% static 'plamood.png' %}">
+<img src="{% static 'aqi_thrissur.png' %}">
+</body>
+</html>
