@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-{% load static%}
+{% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-color:#3238a8;">
+<body style="background-color:#3238a8; color: #fff;">
 {% include 'navbar.html' %}
-<h2 style="color:white;text-align:center;background-color: #f5c116;padding: 10px">ANNOUNCEMENT</h2>
-<p style="color:white;">The live air quality data from monitoring stations managed by the Central Pollution Control Board (CPCB) can be accessed <a style="color:yellow;" href="https://airquality.cpcb.gov.in/ccr/#/caaqm-dashboard-all/caaqm-landing"> CENTRAL POLLUTION CONTROL BOARD </a> It serves a critical role in assessing and managing air quality across India.</p>
-<p style="color:white;">CPCB regularly issues notifications and advisories based on real-time air quality data from its monitoring stations across India <a href="https://cpcb.nic.in/air-pollution/">Click here</a> </p>
-<p style="color:white;">Additionally, CPCB implements various programs aimed at reducing air pollution, such as the National Air Quality Monitoring Programme (NAMP) and initiatives focused on promoting cleaner technologies, improving emission standards, and enhancing public participation in pollution control efforts.</p>
-
-<p style="color:white;">The Kerala State Pollution Control Board (KSPCB) employs Air Quality Index (AQI) data in Kerala <a style="color:yellow;" href="https://kspcb.kerala.gov.in/ "> Click here </a>to monitor trends over time, identify pollution hotspots, and implement targeted interventions to reduce air pollution levels
-
-
-
-
+<div class="container mt-5">
+    <h2 class="text-center bg-warning py-2">ANNOUNCEMENT</h2>
+    <div class="p-4">
+        <p>The live air quality data from monitoring stations managed by the Central Pollution Control Board (CPCB) can be accessed <a class="text-warning" href="https://airquality.cpcb.gov.in/ccr/#/caaqm-dashboard-all/caaqm-landing">CENTRAL POLLUTION CONTROL BOARD</a>. It serves a critical role in assessing and managing air quality across India.</p>
+        <p>CPCB regularly issues notifications and advisories based on real-time air quality data from its monitoring stations across India <a class="text-warning" href="https://cpcb.nic.in/air-pollution/">Click here</a>.</p>
+        <p>Additionally, CPCB implements various programs aimed at reducing air pollution, such as the National Air Quality Monitoring Programme (NAMP) and initiatives focused on promoting cleaner technologies, improving emission standards, and enhancing public participation in pollution control efforts.</p>
+        <p>The Kerala State Pollution Control Board (KSPCB) employs Air Quality Index (AQI) data in Kerala <a class="text-warning" href="https://kspcb.kerala.gov.in/">Click here</a> to monitor trends over time, identify pollution hotspots, and implement targeted interventions to reduce air pollution levels.</p>
+    </div>
+</div>
 </body>
 </html>

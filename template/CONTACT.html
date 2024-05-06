@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,16 @@
 </head>
 <body style="background-color:#f8faf3;">
 {% include 'navbar.html' %}
-<h2 style="color:black;text-align:center;background-color: #ac9d6a;padding: 10px">Contact as</h2>
-<p style="color:rgb(30, 24, 24);">If you have any questions or inquiries, please feel free to reach out to us via email at
-<a style="color:rgb(181, 50, 20);" href="#">email@example.com</a>. We value your feedback and will respond promptly to assist you.</p>
-<p style="color:rgb(15, 14, 14);">If you have an environmental concern or wish to report pollution incidents in Kerala, you can submit a complaint directly to the Kerala State Pollution Control Board (KSPCB).
-    <a style="color:rgb(187, 53, 12);" href="https://kspcb.kerala.gov.in/complaint-registration">Complaint Register</a>. </p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center bg-warning py-2">Contact Us</h2>
+            <p>If you have any questions or inquiries, please feel free to reach out to us via email at
+                <a href="#" class="text-danger">email@example.com</a>. We value your feedback and will respond promptly to assist you.</p>
+            <p>If you have an environmental concern or wish to report pollution incidents in Kerala, you can submit a complaint directly to the Kerala State Pollution Control Board (KSPCB).
+                <a href="https://kspcb.kerala.gov.in/complaint-registration" class="text-danger">Complaint Register</a>.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

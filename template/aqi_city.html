@@ -1,117 +1,96 @@
 <!DOCTYPE html>
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<style> 
-.form-control {
-    padding: 6px 12px; /* Adjust as needed */
-}
+    {% bootstrap_css %}
+    <style>
+        .form-container {
+            margin: 0 auto; /* Center horizontally */
+            max-width: 500px; /* Adjust the maximum width as needed */
+            padding: 20px;
+            background-color: #fff; /* Set background color */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add shadow for a card-like effect */
+        }
 
-.form-group {
-    margin-bottom: 5px; /* Adjust as needed */
-}
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.form-control {
-        width: 200px; /* Adjust the width as needed */
-    }
+        .form-container p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    .form-container {
-        width: 400px; /* Adjust the width as needed */
-        margin: 0 auto; /* Center horizontally */
-        border: 1px solid #ccc; /* Border style */
-        padding: 20px; /* Padding inside the border */
-        border-radius: 5px; /* Optional: Rounded corners */
-    }
-    .form-group label {
-        font-weight: bold;
-    }
+        .form-group label {
+            font-weight: bold;
+            color: #000; /* Set label color */
+        }
 
-    form-group label,
-    .form-group input {
-        display: inline-block;
-        vertical-align: top; /* Align elements to the top */
-    }
+        .form-group input {
+            width: 100%;
+            margin-top: 5px;
+        }
 
-     .form-group {
-        overflow: hidden; /* Clearfix for floated elements */
-    }
-
-    .form-group label {
-        float: left; /* Float labels to the left */
-        width: 100px; /* Set a fixed width for labels */
-        text-align: centre; /* Align text to the right within labels */
-        margin-top: 5px; /* Add some spacing between label and input */
-        font-weight: bold; /* Make labels bold */
-    }
-
-    .form-group input {
-        margin-left: 40px; /* Adjust the margin to align inputs */
-    }
-
- .button {
-        margin-left: 150px;
-        margin-top: 50px;
-    }
-</style>
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body style="background-color:#3238a8;">
+<body style="background-color: #3238a8;">
 {% include 'navbar.html' %}
 <br>
 <br>
 <br>
-<h3 style="color:white;text-align:center;">AQI CALCULATOR FOR {{name}}</h3>
-<p style="color:white;">DIRECTION :: Enter each pollutant concentration value.Click predict to see results.</p>
-<br>
-<br>
-<div class="form-container">
-<form action="prediction/{{name}}" method="post">
-  {% csrf_token %}
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">PM10</label>
-    <input type="text" name="pm10" class="form-control" id="formGroupExampleInput" placeholder="Enter pm10 concentration" >
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput2">PM2.5</label>
-    <input type="text" name="pm2" class="form-control" id="formGroupExampleInput2" placeholder="Enter pm2 concentration" >
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">SO2</label>
-    <input type="text" name="so" class="form-control" id="formGroupExampleInput" placeholder="Enter SO concentration">
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">CO</label>
-    <input type="text" name="co" class="form-control" id="formGroupExampleInput" placeholder="Enter CO concentration">
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">NOX</label>
-    <input type="text" name="nox" class="form-control" id="formGroupExampleInput" placeholder="Enter NOX concentration">
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">NH3</label>
-    <input type="text" name="nh3" class="form-control" id="formGroupExampleInput" placeholder="Enter NH3 concentration">
-  </div>
-  <div class="form-group">
-    <label style="color:white;" for="formGroupExampleInput">O3</label>
-    <input type="text" name="o3" class="form-control" id="formGroupExampleInput" placeholder="Enter O3 concentration" >
-</div>
-  <input class="button btn btn-primary"  type="submit" value="PREDICT">
-
-</form>
+<div class="form-container mt-5">
+    <h3 style="color: #000;">AQI CALCULATOR FOR {{ name }}</h3>
+    <p style="color: #000;">DIRECTION :: Enter each pollutant concentration value. Click predict to see results.</p>
+    <form action="prediction/{{ name }}" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="pm10">PM10</label>
+            <input type="text" name="pm10" class="form-control" id="pm10" placeholder="Enter pm10 concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="pm2">PM2.5</label>
+            <input type="text" name="pm2" class="form-control" id="pm2" placeholder="Enter pm2 concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="so">SO2</label>
+            <input type="text" name="so" class="form-control" id="so" placeholder="Enter SO concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="co">CO</label>
+            <input type="text" name="co" class="form-control" id="co" placeholder="Enter CO concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="nox">NOX</label>
+            <input type="text" name="nox" class="form-control" id="nox" placeholder="Enter NOX concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="nh3">NH3</label>
+            <input type="text" name="nh3" class="form-control" id="nh3" placeholder="Enter NH3 concentration" required>
+        </div>
+        <div class="form-group">
+            <label for="o3">O3</label>
+            <input type="text" name="o3" class="form-control" id="o3" placeholder="Enter O3 concentration" required>
+        </div>
+        <div class="button-container">
+            <input class="button btn btn-primary" type="submit" value="PREDICT">
+        </div>
+    </form>
 </div>
 
 {% if key %}
 <br>
 <br>
-<p style="color:white;margin-left: 650px;">Predicted AQI {{ key }}</p>
-
+<p style="color: white; text-align: center;">Predicted AQI {{ key }}</p>
 <!--AQI CATEGORY {{status}}-->
 {% endif %}
-
-
 
 </body>
 </html>

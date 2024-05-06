@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aqi_app',
     'bootstrap5',
+    'django_bootstrap_icons',
 ]
 
 MIDDLEWARE = [

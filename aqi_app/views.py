@@ -22,9 +22,9 @@ def prediction(request,city):
     nh=float(request.POST['nh3'])
     o3=float(request.POST['o3'])
     if city=="THRISSUR":
-        data_2023 = pd.read_excel(r"C:\Users\AQI\AQI\AQI DATASET_2023_2022.xlsx",sheet_name = '2023')
-        data_2022 = pd.read_excel(r"C:\Users\AQI\AQI\AQI DATASET_2023_2022.xlsx",sheet_name = '2022')
-        data_2022_2=pd.read_excel(r"C:\Users\AQI\AQI\AQI DATASET_2023_2022.xlsx",sheet_name = '2022_AUG_DEC')
+        data_2023 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2023')
+        data_2022 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2022')
+        data_2022_2=pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2022_AUG_DEC')
         data_2023.dropna(inplace=True)
         data_2022_2.dropna(inplace=True)
         data_2022.dropna(inplace=True)

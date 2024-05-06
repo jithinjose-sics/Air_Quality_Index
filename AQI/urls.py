@@ -19,5 +19,5 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",include("aqi_app.urls"))
+    path("",include("aqi_app.urls",namespace='aqi_app'))
 ]

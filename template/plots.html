@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        /* Custom CSS to center images */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust height as needed */
+        }
+    </style>
 </head>
 <body>
 {% include 'navbar.html' %}
-<br>
-<br>
-<img src="{% static 'aqi_karyavattom.png' %}">
-<img src="{% static 'plamood.png' %}">
-<img src="{% static 'aqi_thrissur.png' %}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'aqi_karyavattom.png' %}" class="img-fluid rounded" alt="AQI Karyavattom">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'plamood.png' %}" class="img-fluid rounded" alt="Plamood">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'aqi_thrissur.png' %}" class="img-fluid rounded" alt="AQI Thrissur">
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-color:#3238a8;">
+<body style="background-color:#3238a8; color: #fff;">
 {% include 'navbar.html' %}
-<h2 style="color:white;text-align:center;background-color: #f5c116;padding: 10px">AQI CALCULATOR</h2>
-<p style="color:white;">An AQI (Air Quality Index) calculator is a tool or algorithm that takes input data on pollutant concentrations measured at specific monitoring stations and calculates the overall AQI value for a given location and time. The AQI calculator typically considers the concentrations of various pollutants, such as particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO), as well as their respective health impact functions or breakpoints.
-</p>
-<p style="color:white;">
-The process involves converting pollutant concentrations into standardized sub-indices using predefined equations or tables, and then combining these sub-indices to derive the overall AQI value. The resulting AQI value is usually accompanied by a categorical descriptor (e.g., "good," "moderate," "unhealthy") to help communicate the health implications of the air quality to the public.</p>
-</p>
+<div class="container mt-5">
+    <h2 class="text-center bg-warning py-2">AQI CALCULATOR</h2>
+    <div class="p-4">
+        <p><b>An AQI (Air Quality Index) calculator</b> is a tool or algorithm that takes input data on pollutant concentrations measured at specific monitoring stations and calculates the overall AQI value for a given location and time. The AQI calculator typically considers the concentrations of various pollutants, such as particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO), as well as their respective health impact functions or breakpoints.</p>
+        <p>The process involves converting pollutant concentrations into standardized sub-indices using predefined equations or tables, and then combining these sub-indices to derive the overall AQI value. The resulting AQI value is usually accompanied by a categorical descriptor (e.g., "good," "moderate," "unhealthy") to help communicate the health implications of the air quality to the public.</p>
+    </div>
+</div>
 </body>
 </html>

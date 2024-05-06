@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        body {
+            background-color: #3238a8;
+            color: #fff;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+
+        .content-container p {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body style="background-color:#3238a8;">
-{% include 'navbar.html' %}
-<h2 style="color:white;text-align:center;background-color: #f5c116;padding: 10px">Air Quality And Health</h2>
-<p style="color:white;">1. Air quality plays a significant role in human health, as exposure to air pollution can have various adverse effects on the respiratory, cardiovascular, and other systems of the body. Here's how air quality can impact health:</p>
-<p style="color:white;">2. Respiratory Health: Inhalation of air pollutants, such as particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO), can irritate the respiratory tract and lead to respiratory problems. This includes aggravated asthma, bronchitis, decreased lung function, and increased susceptibility to respiratory infections.</p>
-<p style="color:white;">3. Cardiovascular Health: Air pollution is associated with an increased risk of cardiovascular diseases such as heart attacks, strokes, and hypertension. Exposure to pollutants like PM2.5 and NO2 can trigger inflammation, oxidative stress, and vasoconstriction, leading to cardiovascular events.</p>
-<p style="color:white;">4. Neurological Health: Emerging research suggests that air pollution may also impact neurological health. Exposure to pollutants like fine particulate matter has been linked to cognitive decline, neurodevelopmental disorders in children, and an increased risk of neurodegenerative diseases such as Alzheimer's and Parkinson's.</p>
-<p style="color:white;">5. Reproductive Health: Air pollution can affect reproductive health, including fertility, pregnancy outcomes, and fetal development. Exposure to pollutants during pregnancy has been associated with preterm birth, low birth weight, and developmental abnormalities in offspring.</p>
-<p style="color:white;">6. Mortality: Long-term exposure to high levels of air pollution is associated with an increased risk of premature death from respiratory and cardiovascular diseases, as well as other health conditions. Vulnerable populations, including children, the elderly, and individuals with pre-existing health conditions, are particularly at risk.</p>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <h2 class="text-center bg-warning py-2">Air Quality And Health</h2>
+        <div class="content-container p-4">
+            <p><b>1. Air quality</b>, plays a significant role in human health, as exposure to air pollution can have various adverse effects on the respiratory, cardiovascular, and other systems of the body. Here's how air quality can impact health</p>
+            <p><b>2. Respiratory Health:</b> Inhalation of air pollutants, such as particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO), can irritate the respiratory tract and lead to respiratory problems. This includes aggravated asthma, bronchitis, decreased lung function, and increased susceptibility to respiratory infections.</p>
+            <p><b>3. Cardiovascular Health:</b> Air pollution is associated with an increased risk of cardiovascular diseases such as heart attacks, strokes, and hypertension. Exposure to pollutants like PM2.5 and NO2 can trigger inflammation, oxidative stress, and vasoconstriction, leading to cardiovascular events.</p>
+            <p><b>4. Neurological Health:</b> Emerging research suggests that air pollution may also impact neurological health. Exposure to pollutants like fine particulate matter has been linked to cognitive decline, neurodevelopmental disorders in children, and an increased risk of neurodegenerative diseases such as Alzheimer's and Parkinson's.</p>
+            <p><b>5. Reproductive Health:</b> Air pollution can affect reproductive health, including fertility, pregnancy outcomes, and fetal development. Exposure to pollutants during pregnancy has been associated with preterm birth, low birth weight, and developmental abnormalities in offspring.</p>
+            <p><b>6. Mortality:</b> Long-term exposure to high levels of air pollution is associated with an increased risk of premature death from respiratory and cardiovascular diseases, as well as other health conditions. Vulnerable populations, including children, the elderly, and individuals with pre-existing health conditions, are particularly at risk.</p>
+        </div>
+    </div>
 </body>
 </html>

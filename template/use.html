@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<body style="background-color:#3238a8;">
+<body style="background-color:#3238a8; color: #fff;">
 {% include 'navbar.html' %}
-<h2 style="color:white;text-align:center;background-color: #f5c116;padding: 10px">How to use it</h2>
-<p style="color:white;">To determine the Air Quality Index (AQI) value using an AQI calculator, data on pollutant concentrations such as particulate matter (PM2.5 and PM10), sulfur dioxide (SO2), ozone (O3), ammonia (NH3), carbon monoxide (CO), and nitrogen oxides (NOx) are inputted. Each pollutant's concentration is compared against predefined concentration breakpoints corresponding to AQI categories. For instance, for PM2.5 and PM10, concentrations between 0-12 µg/m³ and 0-54 µg/m³ respectively signify "good" air quality. Likewise, concentrations for other pollutants are categorized into corresponding AQI ranges. The highest AQI value among these pollutants determines the overall AQI. For example, if PM2.5 corresponds to a "moderate" AQI while other pollutants fall within the "good" range, the AQI would be "moderate." This comprehensive assessment provides a clear understanding of air quality conditions and associated health risks, aiding policymakers and the public in making informed decisions to safeguard health.</p>
+<div class="container mt-5">
+    <h2 class="text-center bg-warning py-2">How to use it</h2>
+    <div class="p-4">
+        <p><b>To determine the Air Quality Index (AQI) value using an AQI calculator,</b> data on pollutant concentrations such as particulate matter (PM2.5 and PM10), sulfur dioxide (SO2), ozone (O3), ammonia (NH3), carbon monoxide (CO), and nitrogen oxides (NOx) are inputted. Each pollutant's concentration is compared against predefined concentration breakpoints corresponding to AQI categories. For instance, for PM2.5 and PM10, concentrations between 0-12 µg/m³ and 0-54 µg/m³ respectively signify "good" air quality. Likewise, concentrations for other pollutants are categorized into corresponding AQI ranges. The highest AQI value among these pollutants determines the overall AQI. For example, if PM2.5 corresponds to a "moderate" AQI while other pollutants fall within the "good" range, the AQI would be "moderate." This comprehensive assessment provides a clear understanding of air quality conditions and associated health risks, aiding policymakers and the public in making informed decisions to safeguard health.</p>
+    </div>
+</div>
 </body>
 </html>
