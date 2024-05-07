@@ -14,13 +14,17 @@ def city_aqi(request):
     return render(request,'aqi_city.html',{'name':c})
 
 def prediction(request,city):
-    p1=float(request.POST['pm10'])
-    p2=float(request.POST['pm2'])
-    s=float(request.POST['so'])
-    c=float(request.POST['co'])
-    nx=float(request.POST['nox'])
-    nh=float(request.POST['nh3'])
-    o3=float(request.POST['o3'])
+    p1 = float(request.POST['pm10'])
+    p2 = float(request.POST['pm2'])
+    s = float(request.POST['so'])
+    c = float(request.POST['co'])
+    nx = float(request.POST['nox'])
+    nh = float(request.POST['nh3'])
+    o3 = float(request.POST['o3'])
+    category = ""
+    h = ""
+    s = ""
+    c = ""
     if city=="THRISSUR":
         data_2023 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2023')
         data_2022 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2022')
@@ -96,7 +100,6 @@ def prediction(request,city):
         category="MODERATE"
     elif result>200 and result<=300:
         category="POOR"
-
     elif result > 300 and result <= 400:
         category ="VERY POOR"
     elif result>400:

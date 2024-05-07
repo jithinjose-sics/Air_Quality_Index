@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-{% load static%}
+{% load static %}
 {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
-  
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            background-color: #3238a8;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            background-color: #f5c116;
+            padding: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body style="background-color:#3238a8;">
-{% include 'navbar.html' %}
-<div class='container mt-5'>
-  <h2 style="color:white;text-align:center;background-color: #f5c116;padding: 10px" class='m-5'>WHAT IS AQI</h2>
-<p style="color:white;">
-AQI stands for Air Quality Index. It's a numerical scale used to communicate how polluted or clean the air is in a particular area at a given time. The AQI typically ranges from 0 to 500, with lower values indicating better air quality and higher values indicating worse air quality. Different countries may have their own versions of the AQI, but they generally measure common air pollutants like particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO). AQI values are often categorized into ranges such as "good," "moderate," "unhealthy," "very unhealthy," and "hazardous" to help people understand the health implications of the current air quality.</p>
-<h2 style="color:white;text-align: Index (AQI) is calculated based on the concentrations of specific air pollutants in the atmosphere. Here's a simplified overview of how it works:</p>
-<p style="color:white;">2. Monitoring: Air quality monitoring stations measure the concentrations of various pollutants in the air. These pollutants typically include particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO). The frequency and number of monitoring stations can vary depending on the region and its air quality management system.</p>
-<p style="color:white;">3. Pollutant Concentrations: The concentrations of these pollutants are then compared to established air quality standards or guidelines set by government agencies or international organizations like the World Health Organization (WHO). These standards define levels that are considered safe for human health over specific time periods (e.g., hourly, daily, or annual averages).</p>
-<p style="color:white;">4. Index Calculation: Each pollutant is assigned a sub-index value based on its concentration relative to the air quality standards. These sub-indices are then combined using a specific formula to calculate the overall AQI. The formula varies slightly between different countries or organizations but generally involves converting pollutant concentrations into a standardized scale and then averaging or taking the maximum value among them.</p>
-<p style="color:white;">5. Reporting: The AQI is reported as a single number on a scale from 0 to 500 or sometimes higher. This number indicates the overall air quality at a particular location and time. Additionally, AQI values are often accompanied by descriptive categories (e.g., "good," "moderate," "unhealthy") to help people understand the health implications of the current air quality.</p>
-<p style="color:white;">6. Health Implications: center;background-color: #f5c116;padding: 10px">How Does AQI works</h2>
-<p style="color:white;">1. The Air QualityEach AQI category corresponds to a range of pollutant concentrations and associated health effects. For example, AQI values in the "good" range typically indicate minimal health risks, while values in the "unhealthy" or "hazardous" range suggest significant risks, especially for sensitive populations such as children, the elderly, and individuals with respiratory or cardiovascular conditions.</p>
-</div>
-
-<!--<h2 style="color:white;text-align:center">Major Pollutants</h2>-->
-<!--<p style="color:white;">1. Particulate Matter (PM2.5 and PM10): These are tiny particles suspended in the air, with PM2.5 referring to particles with a diameter of 2.5 micrometers or smaller, and PM10 referring to particles with a diameter of 10 micrometers or smaller. PM2.5 particles are especially concerning because they can penetrate deep into the lungs and even enter the bloodstream, causing respiratory and cardiovascular problems.</p>-->
-<!--<p style="color:white;">2. Ozone (O3): Ozone is a reactive gas molecule present in the Earth's atmosphere. While ozone in the stratosphere protects us from the sun's ultraviolet radiation, ground-level ozone is a major component of smog and can cause respiratory issues, especially in vulnerable populations.</p>-->
-<!--<p style="color:white;">3. Nitrogen Dioxide (NO2): Nitrogen dioxide is a reddish-brown gas produced by burning fossil fuels, primarily from vehicle emissions and industrial activities. Exposure to NO2 can irritate the airways, exacerbate respiratory conditions such as asthma, and contribute to the formation of other air pollutants.</p>-->
-<!--<p style="color:white;">4. Sulfur Dioxide (SO2): Sulfur dioxide is a gas produced by burning fossil fuels containing sulfur, such as coal and oil, and industrial processes like metal smelting. It can cause respiratory problems, particularly in individuals with asthma, and contribute to the formation of particulate matter and acid rain.</p>-->
-<!--<p style="color:white;">5. Carbon Monoxide (CO): Carbon monoxide is a colorless, odorless gas produced by incomplete combustion of carbon-containing fuels, such as gasoline, natural gas, and wood. High levels of CO can be lethal, as it interferes with the body's ability to transport oxygen in the bloodstream.</p>-->
-<!--<h2 style="color:white;text-align:center">Air Quality And Health</h2>-->
-<!--<p style="color:white;">1. Air quality plays a significant role in human health, as exposure to air pollution can have various adverse effects on the respiratory, cardiovascular, and other systems of the body. Here's how air quality can impact health:</p>-->
-<!--<p style="color:white;">2. Respiratory Health: Inhalation of air pollutants, such as particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO), can irritate the respiratory tract and lead to respiratory problems. This includes aggravated asthma, bronchitis, decreased lung function, and increased susceptibility to respiratory infections.</p>-->
-<!--<p style="color:white;">3. Cardiovascular Health: Air pollution is associated with an increased risk of cardiovascular diseases such as heart attacks, strokes, and hypertension. Exposure to pollutants like PM2.5 and NO2 can trigger inflammation, oxidative stress, and vasoconstriction, leading to cardiovascular events.</p>-->
-<!--<p style="color:white;">4. Neurological Health: Emerging research suggests that air pollution may also impact neurological health. Exposure to pollutants like fine particulate matter has been linked to cognitive decline, neurodevelopmental disorders in children, and an increased risk of neurodegenerative diseases such as Alzheimer's and Parkinson's.</p>-->
-<!--<p style="color:white;">5. Reproductive Health: Air pollution can affect reproductive health, including fertility, pregnancy outcomes, and fetal development. Exposure to pollutants during pregnancy has been associated with preterm birth, low birth weight, and developmental abnormalities in offspring.</p>-->
-<!--<p style="color:white;">6. Mortality: Long-term exposure to high levels of air pollution is associated with an increased risk of premature death from respiratory and cardiovascular diseases, as well as other health conditions. Vulnerable populations, including children, the elderly, and individuals with pre-existing health conditions, are particularly at risk.</p>-->
+<body>
+    {% include 'navbar.html' %}
+    <div class='container'>
+        <h2>WHAT IS AQI</h2>
+        <h2>
+            AQI stands for Air Quality Index. It's a numerical scale used to communicate how polluted or clean the air is in a particular area at a given time. The AQI typically ranges from 0 to 500, with lower values indicating better air quality and higher values indicating worse air quality. Different countries may have their own versions of the AQI, but they generally measure common air pollutants like particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO). AQI values are often categorized into ranges such as "good," "moderate," "unhealthy," "very unhealthy," and "hazardous" to help people understand the health implications of the current air quality.
+        </h2>
+        <h2>How AQI Works</h2>
+        <p>
+            The Air Quality Index (AQI) is calculated based on the concentrations of specific air pollutants in the atmosphere. Here's a simplified overview of how it works:
+        </p>
+        <ol>
+            <li><strong>Monitoring:</strong> Air quality monitoring stations measure the concentrations of various pollutants in the air. These pollutants typically include particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO). The frequency and number of monitoring stations can vary depending on the region and its air quality management system.</li>
+            <li><strong>Pollutant Concentrations:</strong> The concentrations of these pollutants are then compared to established air quality standards or guidelines set by government agencies or international organizations like the World Health Organization (WHO). These standards define levels that are considered safe for human health over specific time periods (e.g., hourly, daily, or annual averages).</li>
+            <li><strong>Index Calculation:</strong> Each pollutant is assigned a sub-index value based on its concentration relative to the air quality standards. These sub-indices are then combined using a specific formula to calculate the overall AQI. The formula varies slightly between different countries or organizations but generally involves converting pollutant concentrations into a standardized scale and then averaging or taking the maximum value among them.</li>
+            <li><strong>Reporting:</strong> The AQI is reported as a single number on a scale from 0 to 500 or sometimes higher. This number indicates the overall air quality at a particular location and time. Additionally, AQI values are often accompanied by descriptive categories (e.g., "good," "moderate," "unhealthy") to help people understand the health implications of the current air quality.</li>
+        </ol>
+    </div>
 </body>
 </html>

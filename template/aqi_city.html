@@ -40,6 +40,27 @@
             margin-top: 20px;
         }
     </style>
+    <script>
+        function validateForm() {
+            var pm10 = document.getElementById("pm10").value;
+            var pm2 = document.getElementById("pm2").value;
+            var so = document.getElementById("so").value;
+            var co = document.getElementById("co").value;
+            var nox = document.getElementById("nox").value;
+            var nh3 = document.getElementById("nh3").value;
+            var o3 = document.getElementById("o3").value;
+    
+            // Regular expression to match positive numbers
+            var regex = /^[+]?\d+(\.\d+)?$/;
+    
+            // Validate each input field
+            if (!regex.test(pm10) || !regex.test(pm2) || !regex.test(so) || !regex.test(co) || !regex.test(nox) || !regex.test(nh3) || !regex.test(o3)) {
+                alert("Please enter valid numeric values in all fields.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body style="background-color: #3238a8;">
 {% include 'navbar.html' %}
