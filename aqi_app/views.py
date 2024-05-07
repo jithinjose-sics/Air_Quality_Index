@@ -21,10 +21,6 @@ def prediction(request,city):
     nx = float(request.POST['nox'])
     nh = float(request.POST['nh3'])
     o3 = float(request.POST['o3'])
-    category = ""
-    h = ""
-    s = ""
-    c = ""
     if city=="THRISSUR":
         data_2023 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2023')
         data_2022 = pd.read_excel(r"AQI DATASET_2023_2022.xlsx",sheet_name = '2022')
@@ -46,7 +42,8 @@ def prediction(request,city):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         model = LinearRegression()
         model.fit(X_train, y_train)
-        result=model.predict(np.array([[p1,p2,s,c,nx,nh,o3]]))
+        z=np.array([[p1,p2,s,c,nx,nh,o3]])
+        result=model.predict(z)
 
     elif city=="PLAMOOD":
        
@@ -91,7 +88,10 @@ def prediction(request,city):
         regressor = RandomForestRegressor(n_estimators=10, random_state=0)
         regressor.fit(X_train, y_train)
         result=regressor.predict(np.array([[p1, p2, s, c, nx, nh, o3]]))
-
+    category = ""
+    h = ""
+    s = ""
+    c = ""
     if result>0 and result<=50:
         category="GOOD"
     elif result>50 and result<=100:
