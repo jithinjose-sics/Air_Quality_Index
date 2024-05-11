@@ -14,8 +14,7 @@ urlpatterns=[
     path("health",views.health,name='health'),
     path("calc",views.calc,name='calc'),
     path("use",views.use,name='use'),
-    path("con",views.con,name="con")
-
-
+    path("con",views.con,name="con"),
+    path("work",views.work, name="work")
 
 ]

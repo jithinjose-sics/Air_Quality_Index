@@ -167,7 +167,8 @@ def use(request):
 def con(request):
     return render(request,"CONTACT.html")
 
-
+def work(request):
+    return render(request,'work.html')
 
 
 

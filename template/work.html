@@ -1,10 +1,44 @@
 <!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>How AQI Works?</title>
+    <style>
+        body {
+            background-color: #3238a8;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            background-color: #f5c116;
+            padding: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-
+    {% include 'navbar.html' %}
+    <div class='container'>
+        <h2>How AQI Works</h2>
+        <p>
+            The Air Quality Index (AQI) is calculated based on the concentrations of specific air pollutants in the atmosphere. Here's a simplified overview of how it works:
+        </p>
+        <ol>
+            <li><strong>Monitoring:</strong> Air quality monitoring stations measure the concentrations of various pollutants in the air. These pollutants typically include particulate matter (PM2.5 and PM10), ozone (O3), nitrogen dioxide (NO2), sulfur dioxide (SO2), and carbon monoxide (CO). The frequency and number of monitoring stations can vary depending on the region and its air quality management system.</li>
+            <li><strong>Pollutant Concentrations:</strong> The concentrations of these pollutants are then compared to established air quality standards or guidelines set by government agencies or international organizations like the World Health Organization (WHO). These standards define levels that are considered safe for human health over specific time periods (e.g., hourly, daily, or annual averages).</li>
+            <li><strong>Index Calculation:</strong> Each pollutant is assigned a sub-index value based on its concentration relative to the air quality standards. These sub-indices are then combined using a specific formula to calculate the overall AQI. The formula varies slightly between different countries or organizations but generally involves converting pollutant concentrations into a standardized scale and then averaging or taking the maximum value among them.</li>
+            <li><strong>Reporting:</strong> The AQI is reported as a single number on a scale from 0 to 500 or sometimes higher. This number indicates the overall air quality at a particular location and time. Additionally, AQI values are often accompanied by descriptive categories (e.g., "good," "moderate," "unhealthy") to help people understand the health implications of the current air quality.</li>
+        </ol>
+    </div>
 </body>
 </html>
